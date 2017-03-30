@@ -1,0 +1,13 @@
+ You can assume that all the lines in all the test cases will contain semi colons. Then don't worry about that. 
+FORs should be paired with ENDs. 
+
+
+1 - the only possible syntax errors (those that we will possibly include in the test cases) are: 1. unbalanced parenthesis - 2. unbalanced if-then-else (the cases where one of these key words is missing is also considered to be in this category) - 3. typos in Keywords . You need not look for any other type of syntax error
+
+2- Delimiters are only the ones mentioned in the problem statement (namely only "," and ";")
+
+3- Operators are only the ones mentioned in problem definition (+ - * / ++ =) 
+
+4- Constants are always integer numbers 
+
+For this programming assignment, just make the simplifying assumption that errors only happen at the inner - most loops. 
