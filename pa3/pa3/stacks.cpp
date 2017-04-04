@@ -23,8 +23,22 @@ int main() {
 
   std::cout << "Time to add stuff to it!" << std::endl;
 
-  /*
+	for (int i = 0; i < 10; ++i)
+	{
+		s.push(i);
+	}
+	std::cout << "size is " << s.size() << '\n';
 
+	int bitch = 0;
+
+	for(int i = 0; i < 10; ++i)
+	{
+		bitch = s.top();
+		std::cout << bitch << std::endl;
+		s.pop();
+	}
+
+  /*
   AVAILABLE COMMANDS:
 
     s.empty();
@@ -35,28 +49,5 @@ int main() {
   */
 
 
-	// for (int i=0; i!=str.size(); ++i) {
-	// 	if(str[i]=='('){
-	// 		s.push(str[i]);
-	// 	}
-	// 	if(str[i]==')'){
-	// 		if(s.size()==0){
-	// 			std::cout <<"Mismatch"<<std::endl;
-	// 			return 1;
-	// 		}
-	// 		char checkParenthesis=s.top();
-	// 		if(checkParenthesis=='('){
-	// 			s.pop();
-	// 		} else if(checkParenthesis==')'){
-	// 			std::cout<<"Mismatch"<<std::endl;
-	// 			return 1;
-	// 		}
-	// 	}
-	// }
-	// if(s.size()!=0){
-	// 	std::cout<<"Mismatch"<<std::endl;
-	// 	return 1;
-	// }
-	// std::cout<<"Good job my KITTEN_EMOJI 🐨"<<std::endl;
 
 }
