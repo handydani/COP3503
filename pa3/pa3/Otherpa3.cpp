@@ -32,6 +32,22 @@ int main()
 
   /**********************************/
 
+  // std::stack <char> s;
+  // char token();
+  // char bitch();
+  // while( file.good() )
+  // {
+	// 	file >> token;
+	// 	s.push(token);
+	// }
+  //
+  // for(int i = 0; i < s.size(); ++i)
+  // {
+  //   bitch = s.top();
+  //   std::cout << bitch << std::endl;
+  //   s.pop();
+  // }
+
   //find depth
 
   //keywords:
@@ -41,9 +57,13 @@ int main()
   //delimiter:
 
   //syntax errors:
+  //close file
   /**********************************/
 
 
   file.close();
   return 0;
 }
+// StackClass readFile(){
+//
+//}
