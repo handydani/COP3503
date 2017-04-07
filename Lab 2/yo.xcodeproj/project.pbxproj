@@ -1,0 +1,74 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		656EF8511E3A5D58002691E9 /* lab2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lab2.cpp; sourceTree = "<group>"; };
+		656EF8521E3A5D58002691E9 /* lab2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lab2.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		656EF84A1E3A5D41002691E9 = {
+			isa = PBXGroup;
+			children = (
+				656EF8511E3A5D58002691E9 /* lab2.cpp */,
+				656EF8521E3A5D58002691E9 /* lab2.hpp */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		656EF84B1E3A5D41002691E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = 656EF84E1E3A5D41002691E9 /* Build configuration list for PBXProject "yo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 656EF84A1E3A5D41002691E9;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		656EF84F1E3A5D41002691E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		656EF8501E3A5D41002691E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		656EF84E1E3A5D41002691E9 /* Build configuration list for PBXProject "yo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656EF84F1E3A5D41002691E9 /* Debug */,
+				656EF8501E3A5D41002691E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 656EF84B1E3A5D41002691E9 /* Project object */;
+}

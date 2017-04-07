@@ -11,22 +11,7 @@
 #include <iostream>
 #include <string>
 
-class StackClass
-{
 
-  private:
-
-  public:
-    StackClass();
-
-}
-
-bool readFile(std::string name);
-
-StackClass::StackClass()
-{
-
-}
 
 
 
