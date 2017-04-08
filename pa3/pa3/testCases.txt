@@ -1,0 +1,25 @@
+
+FOR (i, 10, ++) //push
+BEGIN //push
+  FOR (j, 10, ++) //push
+  BEGIN //push
+    sum=sum + i + j;
+  END //pop x 2 ++depth
+END // pop x 2 ++depth
+
+
+FOR (i, 10, ++)
+BEGIN
+  FOR (j, 10, ++)
+  BEGIN
+    sum=sum + i + j;
+  END
+  FOR (k, 5, ++)
+  BEGIN
+    mul=mul * k;
+  END
+END
+
+FOR (i, 10, ++))
+BEGIN
+  sum=sum + i + j;

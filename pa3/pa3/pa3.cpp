@@ -13,49 +13,74 @@
 #include <stack>
 #include <vector>
 
-class StackClass
+
+class DepthStack
 {
+	std::vector<std::string> vect;
+public:
+  DepthStack();
 
-  private:
-
-  public:
-    StackClass();
+	void push(std::string data)
+	{
+		vect.push_back(data);
+	}
+	void pop()
+	{
+		vect.pop_back();
+	}
+	std::string top()
+	{
+		std::string data = vect.back();
+		return data;
+	}
+	int size()
+	{
+		return vect.size();
+	}
 };
 
 class Inventory
 {
+  std::vector<std::string> total;
   public:
-    std::vector<std::string> total; //may or may not be useful
-    std::vector<std::string> keywords;
-    std::vector<std::string> identifiers;
-    std::vector<std::string> constants;
-    std::vector<std::string> operators;
-    std::vector<std::string> delimiters;
     Inventory();
-
-
-    bool doesTokenExist(std::string token);
-    void incrementKeywords(std::string input);
-    void incrementIdentifiers(std::string input);
-    void incrementConstants(std::string input);
-    void incrementOperators(std::string input);
-    void incrementDelimiters(std::string input);
-    void incrementTotal(std::string input); //may or may not be useful
-
-    std::vector<std::string> getKeywords();
-    std::vector<std::string> getIdentifiers();
-    std::vector<std::string> getConstants();
-    std::vector<std::string> getOperators();
-    std::vector<std::string> getDelimiters();
-    std::vector<std::string> getTotal(); //may or may not be useful
+    bool add(std::string token);
+    void print();
 };
+
+Inventory::Inventory()
+{
+
+};
+
+bool Inventory::add(std::string token)
+{
+  total.push_back(token);
+}
+
+void Inventory::print()
+{
+  for(std::vector<std::string>::iterator itr = total.begin() ; itr != total.end(); ++itr)
+  {
+      std::cout << ' ' << *itr << "\n";
+  }
+  std::cout << '\n';
+}
 
 bool readFile(std::string name);
 
-StackClass::StackClass()
+enum State
 {
+	FOR_OR_EXP,
+	FOR_1D,
+	FOR_2D,
+	FOR_3D,
+	FOR_BEGIN,
+	EXP_OP,
+	EXP_IDEN
+  //add more as becomes necessary
+};
 
-}
 
 int main()
 {
@@ -64,15 +89,50 @@ int main()
   std::cout << "Please enter the name of the input file: " << std::endl;
   std::cin >> fileName;
 
-
   if(!readFile(fileName))
   {
     return 1;
-
   }
+
   std::ifstream file(fileName);
 
   /**********************************/
+
+  std::string token = "";
+
+  Inventory* myInventory = new Inventory();
+
+  while(getline(file, token))
+  {
+    myInventory->add(token);
+  }
+
+  myInventory->print();
+
+
+
+  /**********************************/
+
+
+  
+/*
+  _____ ___  ____   ___    _     ___ ____ _____
+ |_   _/ _ \|  _ \ / _ \  | |   |_ _/ ___|_   _|
+   | || | | | | | | | | | | |    | |\___ \ | |
+   | || |_| | |_| | |_| | | |___ | | ___) || |
+   |_| \___/|____/ \___/  |_____|___|____/ |_|
+
+
+   PARSE TOKENS
+
+   RESEARCH STATE MACHINE
+
+   RESEARCH RELEVANT STRING METHODS
+
+   FIND DEPTH
+
+*/
+
 
   //find depth
 
@@ -83,12 +143,29 @@ int main()
   //delimiter:
 
   //syntax errors:
+
+/*
+  _                     _                           _                 _
+(_)_ __  ___  ___ _ __| |_    __ _  ___   ___   __| |   ___ ___   __| | ___
+| | '_ \/ __|/ _ \ '__| __|  / _` |/ _ \ / _ \ / _` |  / __/ _ \ / _` |/ _ \
+| | | | \__ \  __/ |  | |_  | (_| | (_) | (_) | (_| | | (_| (_) | (_| |  __/
+|_|_| |_|___/\___|_|   \__|  \__, |\___/ \___/ \__,_|  \___\___/ \__,_|\___|
+                             |___/
+_
+| |__   ___ _ __ ___
+| '_ \ / _ \ '__/ _ \
+| | | |  __/ | |  __/
+|_| |_|\___|_|  \___|
+
+*/
+
   /**********************************/
 
 
   file.close();
   return 0;
 }
+
 bool readFile(std::string name)
 {
   bool doesFileExist = false;

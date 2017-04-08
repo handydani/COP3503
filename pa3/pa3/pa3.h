@@ -11,7 +11,23 @@
 #include <iostream>
 #include <string>
 
-
+class Stack
+{
+  int depth = 0;
+  public:
+	   void push()
+     {
+		     ++depth;
+	   }
+	  int pop()
+    {
+		    return --depth;
+	   }
+	  int depthStack()
+    {
+		    return depth;
+	  }
+};
 
 
 
