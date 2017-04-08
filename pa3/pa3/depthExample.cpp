@@ -8,11 +8,11 @@
 
 class DepthStack
 {
-	std::vector<std::string> vect;
+	std::vector<int> vect;
 public:
   DepthStack();
 
-	void push(std::string data)
+	void push(int data)
 	{
 		vect.push_back(data);
 	}
@@ -20,17 +20,21 @@ public:
 	{
 		vect.pop_back();
 	}
-	std::string top()
+	int top()
 	{
-		std::string data = vect.back();
+		int data = vect.back();
 		return data;
 	}
 	int size()
 	{
 		return vect.size();
 	}
-};
 
+};
+DepthStack::DepthStack()
+{
+
+}
 enum State
 {
 	FOR_OR_EXP,
@@ -56,20 +60,56 @@ int main()
 
     std::string codeline;
 
+		DepthStack* stack = new DepthStack();
+
+		int maxDepth = -1;
+		int currDepth = 0;
+
     if (codefile.is_open() == true)
     {
         while (getline(codefile, codeline))
         {
 						codefile >> codeline;
             std::cout << codeline << "\n";
-						// FOR
-						// BEGIN
-						// FOR
-						// BEGIN
-						// sum=sum
-						// END
-						// END
+
+						if(codeline == "BEGIN")
+						{
+							//add to keyword list if not already existing
+							stack->push(1);
+							currDepth++;
+							if(currDepth > maxDepth)
+							{
+								maxDepth = currDepth;
+							}
+						}
+						if(codeline == "END")
+						{
+							//add to keyword list if not already existing
+							stack->pop();
+							currDepth--;
+						}
         }
+
+				std::cout << "the size of the stack is "<< stack->size() << " and the size should be 0" << std::endl;
+
+				if( stack->size() != 0)
+				{
+					maxDepth--;
+					if (stack->size() > 0)
+					{
+						//if there is a missing END then the size is positive
+						//increment syntax error with END
+
+					}
+					if(stack->size() < 0)
+					{
+						//if there is a missing FOR then the size is negative
+						//increment syntax error with FOR
+					}
+				}
+
+
+				std::cout <<"curr depth is " << currDepth << " and max depth is " << maxDepth << std::endl;
 
 
         codefile.close();
@@ -88,9 +128,6 @@ int main()
 	std::string nextWord;
 
 	State state = FOR_OR_EXP;
-
-	int maxDepth = 0;
-	int currDepth = 0;
 
 	for(;;)
 	{
@@ -179,6 +216,6 @@ int main()
 
 
 
-}
+	} //end of for loop
   return 0;
-}
+} //end of main

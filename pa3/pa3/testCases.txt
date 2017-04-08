@@ -1,11 +1,11 @@
 
-FOR (i, 10, ++) //push
-BEGIN //push
-  FOR (j, 10, ++) //push
-  BEGIN //push
+FOR (i, 10, ++)
+BEGIN
+  FOR (j, 10, ++)
+  BEGIN
     sum=sum + i + j;
-  END //pop x 2 ++depth
-END // pop x 2 ++depth
+  END
+END
 
 
 FOR (i, 10, ++)
