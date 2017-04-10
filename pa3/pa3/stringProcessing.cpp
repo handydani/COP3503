@@ -32,7 +32,7 @@ int main()
   //returns string::npos if no occurrences
 
 
-  std::cout << "a substring of s1 is " << s1.substring(5,8) <<std::endl;
+  std::cout << "a substring of s1 is: " << s1.substr(0,1) <<std::endl; //t
   //start at position 5 and end at length 8
 
   s1 = "this is a string";
